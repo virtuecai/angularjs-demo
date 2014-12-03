@@ -65,7 +65,7 @@
             };
             uploader.onCompleteItem = function (fileItem, response, status, headers) {
                 //console.info('onCompleteItem', fileItem, response, status, headers);
-                $scope.onFileUploadSuccess(response);
+                if(status == 200) $scope.onFileUploadSuccess(response);
             };
             uploader.onCompleteAll = function () {
                 //console.info('onCompleteAll');
@@ -108,7 +108,7 @@
                 require: ['fileUpload1', '?ngModel'], // get a hold of NgModelController,
                 replace: true,
                 controller: 'fileUpload1_d',
-                template: '<div class="file-upload-btn"><button type="button" class="btn btn-info" ng-click="openFileUploadModal(\'lg\')">文件上传</button></div>',
+                template: '<div class="file-upload-btn"><button type="button" class="btn btn-info" ng-click="openFileUploadModal()">文件上传</button></div>',
                 link: function (scope, element, attrs, ctrls) {
                     var FileUpload1Ctrl = ctrls[0], ngModelCtrl = ctrls[1];
                     if (!ngModelCtrl) {
