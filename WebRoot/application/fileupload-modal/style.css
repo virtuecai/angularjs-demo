@@ -1,0 +1,13 @@
+.file-upload-btn {
+    margin: 10px 0px;
+}
+
+.file-upload-btn input[type="file"] {
+    margin: -33px 0px 10px;
+    top: 0;
+    width: 84px;
+    height: 32px;
+    opacity: 0;
+    cursor: pointer;
+}
+
