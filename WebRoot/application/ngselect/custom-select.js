@@ -26,17 +26,14 @@
             return {
                 restrict: 'E',
                 scope: {
-                    url: '@',
-                    value: '@',
-                    text: '@'
+                    dataUrl: '@',
+                    optionsIdField: '@',
+                    optionsTextField: '@'
                 },
                 require: ['ngModel'], // get a hold of NgModelController,
                 replace: true,
-                template: '<select ng-options="item[\'{{value}}\'] as item[\'{{text}}\'] for item in selectItems"><option value="" ng-selected="selected">-- 请选择 --</option></select>',
+                template: '<select ng-options="item[\'{{optionsIdField}}\'] as item[\'{{optionsTextField}}\'] for item in selectItems"><option value="" ng-selected="selected">-- 请选择 --</option></select>',
                 link: function (scope, element, attrs, ctrls) {
-                    console.log(attrs)
-                    scope.value = attrs.value;
-                    scope.text = attrs.text;
                     $http.get(window['ctx'] + attrs.url).success(function (data) {
                         scope.selectItems = data;
                     });

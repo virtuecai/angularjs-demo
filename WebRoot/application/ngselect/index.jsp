@@ -26,7 +26,7 @@
 
     <div class="row">
         selected: {{selected2}} <br/>
-        <common-select ng-model="selected2" value="id" text="name" data-url="/application/ngselect/data.json"></common-select>
+        <common-select ng-model="selected2" options-id-field="id" options-text-field="name" data-url="/application/ngselect/data.json"></common-select>
     </div>
 
     <div class="row">
@@ -44,7 +44,7 @@
 </script>
 <script src="${ctx}/assets/lib/jquery-1.8.3.min.js"></script>
 <script src="${ctx}/assets/lib/angularjs/angular.js"></script>
-<script src="${ctx}/application/ngselect/c-ng-select.js?time=<%=System.currentTimeMillis()%>"></script>
+<script src="${ctx}/application/ngselect/custom-select.js?time=<%=System.currentTimeMillis()%>"></script>
 
 </body>
 </html>
